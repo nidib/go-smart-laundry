@@ -1,0 +1,221 @@
+.section-services {
+  h3 {
+    font-size: 36px;
+    font-weight: $fw-regular;
+    text-align: center;
+    padding: 40px 0;
+  }
+
+  ul {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    li:nth-of-type(even) {
+      .service .text {
+          background-color: $main-green-98;
+      }
+    }
+    li:nth-of-type(odd) {
+      .service .text {
+        background-color: $main-blue-98;
+      }
+    }
+    li {
+      position: relative;
+      height: 400px;
+      &:not(:last-of-type) {
+        margin-bottom: 30px;
+      }
+      .service {
+        // height: 315px;
+        padding: 40px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        color: $white;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+
+        .text {
+          display: flex;
+          min-height: 300px;
+          box-sizing: border-box;
+          padding: 30px;
+          justify-content: center;
+          align-items: center;
+          box-shadow: $shadow;
+          max-width: 800px;
+          .service-title {
+            height: 250px;
+            width: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            h4 {
+              white-space: nowrap;
+              font-size: 30px;
+              transform: rotate(-90deg);
+            }
+          }
+          .service-description {
+            p {
+              font-size: 18px;
+              line-height: 28px;
+            }
+          }
+        }
+
+      }
+      .service.dry-cleaning {
+        background-image: url(~/assets/hangers.png);
+      }
+      .service.wash-fold {
+        background-image: url(~/assets/folding.png);
+      }
+      .service.laundry {
+        background-image: url(~/assets/laundry.png);
+      }
+      .service.press-only {
+        background-image: url(~/assets/iron.png);
+      }
+      .service.alterations-repair {
+        background-image: url(~/assets/repair.png);
+      }
+    }
+  }
+
+
+  .more {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    p.title {
+      margin: 0 auto;
+      font-size: 22px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  
+    p.more-services {
+      line-height: 32px;
+      font-size: 18px;
+      text-align: center;
+      max-width: 600px;
+    }
+  }
+}
+
+
+
+
+
+$bg-width: 400px;
+$text-width: 560px;
+$text-margin: 100px;
+
+@media screen and (min-width: 768px) {
+  
+  .section-services {
+
+    ul li:nth-of-type(even) {
+      .service {
+        position: absolute;
+        right: calc((100% - (#{$text-width} + #{$text-margin})) / 2);
+        margin-left: unset;
+        .text {
+          left: unset;
+          right: $text-margin;
+        }
+      }
+    }
+
+    ul li {
+      .service {
+        padding: unset;
+        height: 400px;
+        width: $bg-width;
+        position: relative;
+        display: block;
+        margin-left: calc((100% - (#{$text-width} + #{$text-margin})) / 2);
+
+        .text {
+          position: absolute;
+          width: $text-width;
+          top: 50%;
+          left: $text-margin;
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+
+
+    .more {
+      padding: 60px 20px;
+    }
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .section-services {
+    $text-width: 660px;
+
+    ul li:nth-of-type(even) {
+      .service {
+        position: absolute;
+        right: calc((100% - (#{$text-width} + #{$text-margin})) / 2);
+        margin-left: unset;
+
+        .text {
+          left: unset;
+          right: $text-margin;
+        }
+      }
+    }
+
+    ul li {
+      .service {
+        margin-left: calc((100% - (#{$text-width} + #{$text-margin})) / 2);
+
+        .text {
+          width: $text-width;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1180px) {
+  .section-services {
+    $text-width: 800px;
+
+
+    ul li:nth-of-type(even) {
+      .service {
+        position: absolute;
+        right: calc((100% - (#{$text-width} + #{$text-margin})) / 2);
+        margin-left: unset;
+
+        .text {
+          left: unset;
+          right: $text-margin;
+        }
+      }
+    }
+
+    ul li {
+      .service {
+        margin-left: calc((100% - (#{$text-width} + #{$text-margin})) / 2);
+
+        .text {
+          width: $text-width;
+        }
+      }
+    }
+  }
+}

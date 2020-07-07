@@ -1,2 +1,18 @@
-$black: #000;
+$black: #2d2d2d;
 $white: #fff;
+$white-98: rgba($white, .98);
+$main-green: #8AC731;
+$main-green-98: rgba($main-green, .98);
+$main-blue: #445691;
+$main-blue-98: rgba($main-blue, .98);
+
+$font: "Roboto", sans-serif;
+$fw-regular: 400;
+$fw-bold: 700;
+
+$shadow: 5px 5px 15px rgba($black, .20);
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}

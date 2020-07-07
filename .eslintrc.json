@@ -15,9 +15,11 @@
         "@typescript-eslint"
     ],
     "rules": {
+      "no-use-before-define": "off",
       "no-alert": "off",
       "no-console": "off",
       "semi": ["error", "always"],
-      "quotes": ["error", "double"]
+      "quotes": ["error", "double"],
+      "max-len": "off"
     }
 }
