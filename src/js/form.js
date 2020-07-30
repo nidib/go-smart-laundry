@@ -1,6 +1,6 @@
-const form = document.querySelector("form");
+const form = document.querySelector('form');
 
-function checkName(inputField: HTMLInputElement): boolean {
+function checkName(inputField) {
   const regex = new RegExp(/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/g);
   if (!regex.test(inputField.value) || inputField.value.length < 3) {
     return false;
@@ -8,7 +8,7 @@ function checkName(inputField: HTMLInputElement): boolean {
   return true;
 }
 
-function checkEmail(inputField: HTMLInputElement): boolean {
+function checkEmail(inputField) {
   const regex = new RegExp(/^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?$/);
   if (!regex.test(inputField.value)) {
     return false;
@@ -16,21 +16,21 @@ function checkEmail(inputField: HTMLInputElement): boolean {
   return true;
 }
 
-function checkPhone(inputField: HTMLInputElement): boolean {
+function checkPhone(inputField) {
   if (inputField.value.trim()) {
     return true;
   }
   return false;
 }
 
-function checkSubject(inputField: HTMLInputElement): boolean {
+function checkSubject(inputField) {
   if (inputField.value.trim()) {
     return true;
   }
   return false;
 }
 
-function checkMessage(textareaField: HTMLInputElement): boolean {
+function checkMessage(textareaField) {
   if (textareaField.value.trim()) {
     return true;
   }
@@ -39,7 +39,7 @@ function checkMessage(textareaField: HTMLInputElement): boolean {
 
 let formErrors = [];
 function formValidation() {
-  form.addEventListener("submit", (e) => {
+  form.addEventListener('submit', (e) => {
     const nameField = form.children[0];
     const emailField = form.children[1];
     const phoneField = form.children[2];
@@ -48,14 +48,13 @@ function formValidation() {
 
     formErrors = [];
     formErrors = [checkName(nameField), checkEmail(emailField), checkPhone(phoneField), checkSubject(subjectField), checkMessage(messageField)];
-    console.log(formErrors);
     if (formErrors.includes(false)) {
       e.preventDefault();
       formErrors.forEach((input, index) => {
         if (input) {
-          form.children[index].style.borderColor = "green";
+          form.children[index].style.borderColor = 'green';
         } else {
-          form.children[index].style.borderColor = "red";
+          form.children[index].style.borderColor = 'tomato';
         }
       });
     }

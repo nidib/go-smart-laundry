@@ -1,7 +1,7 @@
-const holidays = ["07/04", "12/25", "12/31"];
+const holidays = ['07/04', '12/25', '12/31'];
 let isHoliday = false;
 
-function getAmericanDate(now: Date) {
+function getAmericanDate(now) {
   const currMonth = now.getMonth() + 1;
   const currDate = now.getDate();
   const month = ((currMonth) < 10) ? `0${currMonth}` : currMonth;
@@ -10,7 +10,7 @@ function getAmericanDate(now: Date) {
   return `${month}/${date}`;
 }
 
-function isOpen(now: Date): boolean {
+function isOpen(now) {
   const currentTime = now.toTimeString().substring(0, 8);
 
   // Holidays
@@ -25,30 +25,30 @@ function isOpen(now: Date): boolean {
   }
 
   // Saturday
-  if (((now.getDay() === 6)) && (currentTime < "09:00:00" || currentTime > "17:00:00")) {
+  if (((now.getDay() === 6)) && (currentTime < '09:00:00' || currentTime > '17:00:00')) {
     return false;
   }
 
   // Regular weekday
-  if (currentTime < "07:30:00" || currentTime > "19:00:00") {
+  if (currentTime < '07:30:00' || currentTime > '19:00:00') {
     return false;
   }
 
   return true;
 }
 
-const isOpenElement: HTMLElement = document.querySelector(".is-open p");
+const isOpenElement = document.querySelector('.is-open p');
 
 function up() {
-  isOpenElement.classList.remove("false");
-  isOpenElement.classList.add("true");
-  isOpenElement.innerText = "Open";
+  isOpenElement.classList.remove('false');
+  isOpenElement.classList.add('true');
+  isOpenElement.innerText = 'Open';
 }
 
 function down() {
-  isOpenElement.classList.remove("true");
-  isOpenElement.classList.add("false");
-  isOpenElement.innerText = (isHoliday) ? "Closed (Holiday)" : "Closed";
+  isOpenElement.classList.remove('true');
+  isOpenElement.classList.add('false');
+  isOpenElement.innerText = (isHoliday) ? 'Closed (Holiday)' : 'Closed';
 }
 
 function keepChecking() {
